@@ -1,0 +1,91 @@
+{   
+    "default": {
+        "firstScene": "face",       
+        "sceneFadeDuration": 1000,
+        "autoload": true
+    },
+    
+    "scenes": {
+        "face": {
+            "title": "Exhibit Face", 
+            "yaw": 182,
+            "pitch": -2,
+            "type": "equirectangular",
+            "panorama": "img/face.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -2.2,
+                    "yaw": -153,
+                    "type": "scene",
+                    "text": "Exhibit Wall",
+                    "sceneId": "wall"
+                },
+                {
+                    "pitch": -2.2,
+                    "yaw": 157,
+                    "type": "scene",
+		            "text": "Exhibit Nook",
+		            "sceneId": "nook"
+                },
+                {
+                    "pitch": 5,
+                    "yaw": 182,
+                    "type": "info",
+                    "text": "Description of hotspot goes here" 
+                }
+            ]
+        },
+
+        "nook": {
+            "title": "Exhibit Nook",
+            "hfov": 120,
+            "yaw": -1.6,
+            "pitch": -4,
+            "type": "equirectangular",
+            "panorama": "img/nook.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0.3,
+                    "yaw": 156,
+                    "hfov": 120,
+                    "type": "scene",
+                    "text": "Exhibit Face",
+                    "sceneId": "face"       
+                },
+                {
+                    "pitch": 18,
+                    "yaw": 27,
+                    "type": "info",
+                    "text": "Description of hotspot goes here"
+                }
+            ]
+        },
+		"wall": {
+        "title": "Exhibit Wall",
+        "yaw": -189,
+        "type": "equirectangular",
+        "panorama": "img/wall.jpg",
+        "hotSpots": [
+          {
+            "pitch": -1.5,
+            "yaw": 123,
+            "type": "scene",
+            "text": "Exhibit Face",
+            "sceneId": "face"
+          },
+	  {
+	    "pitch": 1,
+	    "yaw": -192,
+	    "type": "info",
+	    "text": "Description of hotspot goes here"
+	  },
+	  {
+	    "pitch": 6,
+	    "yaw": 51,
+	    "type": "info",
+	    "text": "ERIC AND PAITYN ARE HERE"
+	  }
+        ]
+      }
+    }
+}
