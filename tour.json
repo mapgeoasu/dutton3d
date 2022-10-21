@@ -11,7 +11,7 @@
             "yaw": 182,
             "pitch": -2,
             "type": "equirectangular",
-            "panorama": "img/front.jpg",
+            "panorama": "img/front.JPG",
             "hotSpots": [
                 {
                     "pitch": -2.2,
@@ -42,7 +42,7 @@
             "yaw": -1.6,
             "pitch": -4,
             "type": "equirectangular",
-            "panorama": "img/nook_new.jpg",
+            "panorama": "img/nook_new.JPG",
             "hotSpots": [
                 {
                     "pitch": 0.3,
@@ -64,7 +64,7 @@
         "title": "Exhibit Wall",
         "yaw": -189,
         "type": "equirectangular",
-        "panorama": "img/side_wall.jpg",
+        "panorama": "img/side_wall.JPG",
         "hotSpots": [
           {
             "pitch": -1.5,
