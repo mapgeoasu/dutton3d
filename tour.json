@@ -8,14 +8,14 @@
     "scenes": {
         "face": {
             "title": "Exhibit Face", 
-            "yaw": 180,
+            "yaw": -180,
             "pitch": -2,
             "type": "equirectangular",
             "panorama": "img/exhibit_front.JPG",
             "hotSpots": [
                 {
                     "pitch": -2.2,
-                    "yaw": -153,
+                    "yaw": 153,
                     "type": "scene",
                     "text": "Exhibit Wall",
                     "sceneId": "wall"
