@@ -9,27 +9,27 @@
         "face": {
             "title": "Exhibit Face", 
             "yaw": -10,
-            "pitch": -2,
+            "pitch": 0,
             "type": "equirectangular",
             "panorama": "img/exhibit_front.JPG",
             "hotSpots": [
                 {
-                    "pitch": -2.2,
-                    "yaw": 153,
+                    "pitch": 0,
+                    "yaw": 27,
                     "type": "scene",
                     "text": "Exhibit Wall",
                     "sceneId": "wall"
                 },
                 {
-                    "pitch": -2.2,
-                    "yaw": 157,
+                    "pitch": 0,
+                    "yaw": 23,
                     "type": "scene",
 		            "text": "Exhibit Nook",
 		            "sceneId": "nook"
                 },
                 {
                     "pitch": 5,
-                    "yaw": 182,
+                    "yaw": -2,
                     "type": "info",
                     "text": "Description of hotspot goes here" 
                 }
