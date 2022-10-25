@@ -22,7 +22,7 @@
                 },
                 {
                     "pitch": 0,
-                    "yaw": -35,
+                    "yaw": -40,
                     "type": "scene",
 		            "text": "Exhibit Nook",
 		            "sceneId": "nook"
