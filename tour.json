@@ -15,14 +15,14 @@
             "hotSpots": [
                 {
                     "pitch": 0,
-                    "yaw": 27,
+                    "yaw": 23,
                     "type": "scene",
                     "text": "Exhibit Wall",
                     "sceneId": "wall"
                 },
                 {
                     "pitch": 0,
-                    "yaw": 23,
+                    "yaw": -27,
                     "type": "scene",
 		            "text": "Exhibit Nook",
 		            "sceneId": "nook"
