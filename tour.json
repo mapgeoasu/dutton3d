@@ -8,7 +8,7 @@
     "scenes": {
         "face": {
             "title": "Exhibit Face", 
-            "yaw": -10,
+            "yaw": 0,
             "pitch": 0,
             "type": "equirectangular",
             "panorama": "img/exhibit_front.JPG",
@@ -62,6 +62,7 @@
         },
 		"wall": {
         "title": "Exhibit Wall",
+	"pitch": -1.5,		
         "yaw": 0,
         "type": "equirectangular",
         "panorama": "img/side_wall.JPG",
