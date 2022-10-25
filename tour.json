@@ -11,7 +11,7 @@
             "yaw": 182,
             "pitch": -2,
             "type": "equirectangular",
-            "panorama": "img/front.JPG",
+            "panorama": "img/exhibit_front.JPG",
             "hotSpots": [
                 {
                     "pitch": -2.2,
@@ -42,7 +42,7 @@
             "yaw": -1.6,
             "pitch": -4,
             "type": "equirectangular",
-            "panorama": "img/nook_new.JPG",
+            "panorama": "img/exhibit_nook.JPG",
             "hotSpots": [
                 {
                     "pitch": 0.3,
