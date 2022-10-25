@@ -8,7 +8,7 @@
     "scenes": {
         "face": {
             "title": "Exhibit Face", 
-            "yaw": -180,
+            "yaw": 0,
             "pitch": -2,
             "type": "equirectangular",
             "panorama": "img/exhibit_front.JPG",
