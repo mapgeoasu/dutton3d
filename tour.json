@@ -69,7 +69,7 @@
         "hotSpots": [
           {
             "pitch": -1.5,
-            "yaw": 123,
+            "yaw": 0,
             "type": "scene",
             "text": "Exhibit Face",
             "sceneId": "face"
