@@ -39,8 +39,8 @@
         "nook": {
             "title": "Exhibit Nook",
             "hfov": 120,
-            "yaw": -1.6,
-            "pitch": -4,
+            "yaw": 0,
+            "pitch": 0,
             "type": "equirectangular",
             "panorama": "img/exhibit_nook.JPG",
             "hotSpots": [
@@ -62,7 +62,7 @@
         },
 		"wall": {
         "title": "Exhibit Wall",
-        "yaw": -189,
+        "yaw": 0,
         "type": "equirectangular",
         "panorama": "img/side_wall.JPG",
         "hotSpots": [
