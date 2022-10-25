@@ -9,7 +9,7 @@
         "face": {
             "title": "Exhibit Face", 
             "yaw": 0,
-            "pitch": -2,
+            "pitch": 150,
             "type": "equirectangular",
             "panorama": "img/exhibit_front.JPG",
             "hotSpots": [
