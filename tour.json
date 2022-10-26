@@ -39,7 +39,7 @@
         "nook": {
             "title": "Exhibit Nook",
             "hfov": 120,
-            "yaw": 180,
+            "yaw": 90,
             "pitch": 0,
             "type": "equirectangular",
             "panorama": "img/nook_puck.JPG",
