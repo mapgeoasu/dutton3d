@@ -46,7 +46,7 @@
             "hotSpots": [
                 {
                     "pitch": 0.3,
-                    "yaw": -110,
+                    "yaw": -40,
                     "hfov": 120,
                     "type": "scene",
                     "text": "Exhibit Face",
