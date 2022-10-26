@@ -42,7 +42,7 @@
             "yaw": 0,
             "pitch": 0,
             "type": "equirectangular",
-            "panorama": "img/exhibit_nook.JPG",
+            "panorama": "img/nook_puck.JPG",
             "hotSpots": [
                 {
                     "pitch": 0.3,
