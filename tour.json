@@ -46,15 +46,15 @@
             "hotSpots": [
                 {
                     "pitch": 0.3,
-                    "yaw": 156,
+                    "yaw": 70,
                     "hfov": 120,
                     "type": "scene",
                     "text": "Exhibit Face",
                     "sceneId": "face"       
                 },
                 {
-                    "pitch": 18,
-                    "yaw": 27,
+                    "pitch": 0.3,
+                    "yaw": 156,
                     "type": "info",
                     "text": "Description of hotspot goes here"
                 }
