@@ -11,7 +11,7 @@
             "yaw": -10,
             "pitch": 0,
             "type": "equirectangular",
-            "panorama": "img/nook_update.JPG",
+            "panorama": "img/exhibit_front.JPG",
             "hotSpots": [
                 {
                     "pitch": 0,
@@ -39,10 +39,10 @@
         "nook": {
             "title": "Exhibit Nook",
             "hfov": 120,
-            "yaw": 179,
+            "yaw": 0,
             "pitch": 0,
             "type": "equirectangular",
-            "panorama": "img/nook_puck.JPG",
+            "panorama": "img/nook_update.JPG",
             "hotSpots": [
                 {
                     "pitch": 0.3,
