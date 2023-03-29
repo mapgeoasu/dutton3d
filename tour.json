@@ -63,13 +63,8 @@
                     "yaw": 180,
                     "type": "info",
                     "text": "Description of cast goes here"
-                },
-	        {
-                    "pitch": 10,
-                    "yaw": -65,
-                    "type": "info",
-                    "text": "Description of puzzle goes here"
                 }
+
             ]
         },
 		"wall": {
