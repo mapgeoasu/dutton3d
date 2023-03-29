@@ -53,8 +53,8 @@
                     "sceneId": "face"       
                 },
                 {
-                    "pitch": 0.3,
-                    "yaw": 90,
+                    "pitch": -5,
+                    "yaw": 85,
                     "type": "info",
                     "text": "Description of hotspot goes here"
                 }
