@@ -87,16 +87,10 @@
             "sceneId": "face"
           },
 	  {
-	    "pitch": 1,
-	    "yaw": -192,
+	    "pitch": -20,
+	    "yaw": 0,
 	    "type": "info",
-	    "text": "Description of hotspot goes here"
-	  },
-	  {
-	    "pitch": 6,
-	    "yaw": 51,
-	    "type": "info",
-	    "text": "ERIC AND PAITYN ARE HERE"
+	    "text": "This three part piece, 'Panorama From Point Sublime', is the star of the Atlas."
 	  }
         ]
       }
