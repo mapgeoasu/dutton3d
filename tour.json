@@ -31,7 +31,7 @@
                     "pitch": 5,
                     "yaw": -2,
                     "type": "info",
-                    "text": "Description of hotspot goes here" 
+                    "text": "This installation is part of a larger project accompanied by a significant digital component. Visit the Dutton's Atlas sublink above to learn more. " 
                 }
             ]
         },
@@ -56,19 +56,19 @@
                     "pitch": -40,
                     "yaw": 65,
                     "type": "info",
-                    "text": "Description of rocks goes here"
+                    "text": "Rocks sourced from the rim, the cliffs, and the bottom of the Grand Canyon. "
                 },
 		{
                     "pitch": -40,
                     "yaw": 180,
                     "type": "info",
-                    "text": "Description of cast goes here"
+                    "text": "Three dimension terrain model of the Grand Canyon, showcasing Powell Plateau and it's extending ridges."
                 },
 		{
                     "pitch": -10,
                     "yaw": -92,
                     "type": "info",
-                    "text": "Description of puzzle goes here"
+                    "text": "Hand-made terrain model and puzzle of the eastern half of the Grand Canyon region."
                 }
             ]
         },
@@ -90,7 +90,7 @@
 	    "pitch": -20,
 	    "yaw": 0,
 	    "type": "info",
-	    "text": "This three part piece, 'Panorama From Point Sublime', is the star of the Atlas."
+	    "text": "One of the most iconic pieces from the atlas, the triptych 'Panorama from Point Sublime'."
 	  }
         ]
       }
