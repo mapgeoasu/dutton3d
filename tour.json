@@ -56,7 +56,19 @@
                     "pitch": -40,
                     "yaw": 65,
                     "type": "info",
-                    "text": "Description of hotspot goes here"
+                    "text": "Description of rocks goes here"
+                }
+		    {
+                    "pitch": -40,
+                    "yaw": 180,
+                    "type": "info",
+                    "text": "Description of cast goes here"
+                }
+	    {
+                    "pitch": 10,
+                    "yaw": -65,
+                    "type": "info",
+                    "text": "Description of puzzle goes here"
                 }
             ]
         },
