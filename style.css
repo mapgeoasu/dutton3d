@@ -125,6 +125,12 @@ color: #50433d;
   font-family: 'Merriweather', serif;
 }
 
+/*Panorama window size*/
+#panorama { 
+    width: 760px;
+    height: 400px;
+}
+
 .esri-popup__header-title {
   text-align: left;
 }

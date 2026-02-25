@@ -1,110 +1,105 @@
-require(["esri/WebScene", "esri/views/SceneView", "esri/widgets/Home"], function (
-    WebScene,
-    SceneView,
-    Home
-  ) {
-    // Important variables for connecting the sceneview to the AGOL API  
-    /************************************************************
-     * A WebScene must reference a PortalItem ID
-     * To load a WebScene from an on-premise portal, set the portal
-     * url with esriConfig.portalUrl.
-     ************************************************************/ 
+require(["esri/WebScene", "esri/views/SceneView", "esri/widgets/Home"], function (WebScene, SceneView, Home) {
+  // Important variables for connecting the sceneview to the AGOL API
+  /************************************************************
+   * A WebScene must reference a PortalItem ID
+   * To load a WebScene from an on-premise portal, set the portal
+   * url with esriConfig.portalUrl.
+   ************************************************************/
 
   // Load webscene from portal item
-    const scene = new WebScene({
-        portalItem: {
-            id: "dea74d75219c45b19ffc57890b815746" // this is the id of the sceneview the app is connected to dutton's atlas: dea74d75219c45b19ffc57890b815746
-        }
-    });
+  const scene = new WebScene({
+    portalItem: {
+      id: "dea74d75219c45b19ffc57890b815746" // this is the id of the sceneview the app is connected to dutton's atlas: dea74d75219c45b19ffc57890b815746
+    }
+  });
 
-    const view = new SceneView({
-      container: "viewDiv",
-      map: scene,
-      qualityProfile: "high",
-      highlightOptions: {
-        color: [162, 54, 23], 
-        fillOpacity: 0,
-      },
-      popup: {
-        //Docks the popup and removes the default that connects popup to item
-        dockEnabled: true,
-        // Disables the dock button from the popup
-        dockOptions: {
-           // Positions the popup top-right until screen sizes changes. Can set to a specific location. Example: bottom-right
-          // position: "auto",
-          //Allows the docking button. Set to false if you don't want the user to dock
-          buttonEnabled: true,
-          // Ignore the default sizes that trigger responsive docking
-          breakpoint: false,
-          // collapseEnabled: true,
-        },
+  const view = new SceneView({
+    container: "viewDiv",
+    map: scene,
+    qualityProfile: "high",
+    highlightOptions: {
+      color: [162, 54, 23],
+      fillOpacity: 0
+    },
+    popup: {
+      //Docks the popup and removes the default that connects popup to item
+      dockEnabled: true,
+      // Disables the dock button from the popup
+      dockOptions: {
+        // Positions the popup top-right until screen sizes changes. Can set to a specific location. Example: bottom-right
+        // position: "auto",
+        //Allows the docking button. Set to false if you don't want the user to dock
+        buttonEnabled: true,
+        // Ignore the default sizes that trigger responsive docking
+        breakpoint: false
+        // collapseEnabled: true,
       }
-    });
-    
-    // Removes the Zoom To button at the top of the popup. Set to true to add.
-    view.popup.viewModel.includeDefaultActions = false;
+    }
+  });
 
+  // Removes the Zoom To button at the top of the popup. Set to true to add.
+  view.popup.viewModel.includeDefaultActions = false;
 
-    // reduce popup size
-    // $(function() {            
-    //   $("body:not(.esriIsPhoneSize) #viewDiv .esri-popup.esri-popup--is-docked .esri-popup__main-container").css('padding-bottom', '5000px');                
-    // });
+  // reduce popup size
+  // $(function() {
+  //   $("body:not(.esriIsPhoneSize) #viewDiv .esri-popup.esri-popup--is-docked .esri-popup__main-container").css('padding-bottom', '5000px');
+  // });
 
-    // Adds padding to the widgets
-    view.ui.padding = 10;
-    
+  // Adds padding to the widgets
+  view.ui.padding = 10;
+
   // Show modal on page load
-  // Instead of using cookies so it doesn't show up every time, the infoModal uses session storage. When the browser is closed, the session storage key should be deleted. 
-  //infoModal will load again when the user opens the browser 
-    $(document).ready(function () {
+  // Instead of using cookies so it doesn't show up every time, the infoModal uses session storage. When the browser is closed, the session storage key should be deleted.
+  //infoModal will load again when the user opens the browser
+  $(document).ready(function () {
     // Check if user saw the modal
-    var key = 'openedModal',
-        hadModal = sessionStorage.getItem(key);
+    var key = "openedModal",
+      hadModal = sessionStorage.getItem(key);
     // Show the modal only if new user
     if (!hadModal) {
-        $('#infoModal').modal('show');
+      $("#infoModal").modal("show");
     }
     // If modal is displayed, store that in localStorage
-    $('#infoModal').on('shown.bs.modal', function () {
-        sessionStorage.setItem(key, true);
-    })
+    $("#infoModal").on("shown.bs.modal", function () {
+      sessionStorage.setItem(key, true);
     });
+  });
 
   // Function to rotate the map
-  // function rotate() {         
+  // function rotate() {
   //   view.goTo({
   //       heading: view.camera.heading + 0.2,
   //       center: view.center
   //   }, {animate: false});
   //   // begin the rotation
-  //   var req = requestAnimationFrame(rotate);            
+  //   var req = requestAnimationFrame(rotate);
   //   // when the user clicks on the pause button
-  //   pauseBtn.addEventListener('click', function(event){  
+  //   pauseBtn.addEventListener('click', function(event){
   //     // cancel the rotation
   //     cancelAnimationFrame(req);
-  //     $(".esri-icon-play").show(); 
-  //     $(".esri-icon-pause").hide();     
+  //     $(".esri-icon-play").show();
+  //     $(".esri-icon-pause").hide();
   //   })
-  // };   
+  // };
 
   // Custom Buttons
   // Home button
   const homeBtn = new Home({
     view: view,
-    id: "home",
+    id: "home"
   });
 
   // Add the home button to the top left corner of the view
-  view.ui.add(homeBtn, "top-left");        
+  view.ui.add(homeBtn, "top-left");
 
   // Rotate play button
-  // var rotateBtn = document.createElement('div');        
+  // var rotateBtn = document.createElement('div');
   // rotateBtn.className = "esri-icon-play esri-widget--button esri-widget esri-interactive";
   // rotateBtn.title = "Auto-rotate map";
   // rotateBtn.addEventListener('click', function(event){
   //   rotate();
   //   $(".esri-icon-play").hide();
-  //   $(".esri-icon-pause").show();         
+  //   $(".esri-icon-pause").show();
   // })
 
   // Add the button to the UI
@@ -116,36 +111,134 @@ require(["esri/WebScene", "esri/views/SceneView", "esri/widgets/Home"], function
   // pauseBtn.title = "Pause rotation";
 
   // Add the button to the UI
-  // view.ui.add(pauseBtn, "top-left"); 
+  // view.ui.add(pauseBtn, "top-left");
 
   // $(".esri-icon-pause").hide();
 
   // Add element for the 360 photo viewer button using Esri widgets
-  var viewerBtn = document.createElement('div');
+  var viewerBtn = document.createElement("div");
   viewerBtn.className = "esri-icon-media esri-widget--button esri-widget esri-interactive";
   viewerBtn.title = "View 360 Hub photo";
-  viewerBtn.addEventListener('click', function(event){
+  viewerBtn.addEventListener("click", function (event) {
     // Toggle panorama
-    $('#viewerModal').modal('show');
-    document.getElementById("pano").src="https://cdn.pannellum.org/2.5/pannellum.htm#config=https://mapgeoasu.github.io/dutton3d/tour.json&autoLoad=true";
-  })
+    $("#viewerModal").modal("show");
+    //document.getElementById("pano").src="https://cdn.pannellum.org/2.5/pannellum.htm#config=https://mapgeoasu.github.io/dutton3d/tour.json&autoLoad=true";
+  });
 
   // Add the button to the UI
-  view.ui.add(viewerBtn, "top-left"); 
+  view.ui.add(viewerBtn, "top-left");
 
   // Add element for the information button using Esri widgets
-  var infoBtn = document.createElement('div');
+  var infoBtn = document.createElement("div");
   infoBtn.className = "esri-icon-description esri-widget--button esri-widget esri-interactive";
   infoBtn.title = "Information";
-  infoBtn.addEventListener('click', function(event){
+  infoBtn.addEventListener("click", function (event) {
     // Toggle infowindow modal
-    $('#infoModal').modal('show');
-  })
+    $("#infoModal").modal("show");
+  });
 
   // Add the button to the UI
-  view.ui.add(infoBtn, "top-left"); 
+  view.ui.add(infoBtn, "top-left");
 
   // Removes the default compass widget from the view's container
   view.ui.remove("compass");
 
+  // Pannellum 3D Photo Viewer settings
+  pannellum.viewer("panorama", {
+    default: {
+      firstScene: "face",
+      sceneFadeDuration: 1000,
+      //autoRotate: -5,
+      autoload: true,
+    },
+    scenes: {
+      face: {
+        title: "Exhibit Face",
+        yaw: -10,
+        pitch: 0,
+        type: "equirectangular",
+        panorama: "img/exhibit_front.JPG",
+        hotSpots: [
+          {
+            pitch: 0,
+            yaw: 23,
+            type: "scene",
+            text: "Exhibit Wall",
+            sceneId: "wall"
+          },
+          {
+            pitch: 0,
+            yaw: -40,
+            type: "scene",
+            text: "Exhibit Nook",
+            sceneId: "nook"
+          },
+          {
+            pitch: 5,
+            yaw: -2,
+            type: "info",
+            text: "This installation is part of a larger project accompanied by a significant digital component. Visit the Dutton's Atlas sublink above to learn more. "
+          }
+        ]
+      },
+      nook: {
+        title: "Exhibit Nook",
+        hfov: 120,
+        yaw: 180,
+        pitch: 0,
+        type: "equirectangular",
+        panorama: "img/nook_update.JPG",
+        hotSpots: [
+          {
+            pitch: 0.3,
+            yaw: -30,
+            hfov: 120,
+            type: "scene",
+            text: "Exhibit Face",
+            sceneId: "face"
+          },
+          {
+            pitch: -40,
+            yaw: 65,
+            type: "info",
+            text: "Rocks sourced from the rim, the cliffs, and the bottom of the Grand Canyon. "
+          },
+          {
+            pitch: -40,
+            yaw: 180,
+            type: "info",
+            text: "Three dimension terrain model of the Grand Canyon, showcasing Powell Plateau and it's extending ridges."
+          },
+          {
+            pitch: -10,
+            yaw: -92,
+            type: "info",
+            text: "Hand-made terrain model and puzzle of the eastern half of the Grand Canyon region."
+          }
+        ]
+      },
+      wall: {
+        title: "Exhibit Wall",
+        pitch: 1.5,
+        yaw: 0,
+        type: "equirectangular",
+        panorama: "img/side_wall.JPG",
+        hotSpots: [
+          {
+            pitch: -1.5,
+            yaw: -65,
+            type: "scene",
+            text: "Exhibit Face",
+            sceneId: "face"
+          },
+          {
+            pitch: -20,
+            yaw: 0,
+            type: "info",
+            text: "One of the most iconic pieces from the atlas, the triptych 'Panorama from Point Sublime'."
+          }
+        ]
+      }
+    }
+  });
 }); // end of map JS

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GOOGLE ANALYTIC ID HERE"></script>
+<!doctype html>
+<html lang="us">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GOOGLE ANALYTIC ID HERE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -11,134 +11,248 @@
       gtag('config', 'ENTER GOOGLE ANALYTIC HERE');
     </script> -->
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Dutton's Atlas 3D</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>Dutton's Atlas 3D Exhibit</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css" />
-    <link rel="stylesheet" href="style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css" />
+        <link rel="stylesheet" href="style.css" />
+        
+        <!--PANNELLUM-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.css"/>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
 
-    <!--Google font stylesheet; Adding "preconnect loads the Google font files faster"-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"; rel=stylesheet>
-    <link href="https://fonts.googleapis.com/css2?family=Noto Sans&display=swap"; rel=stylesheet>
-    
-    <!-- import jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
-    <!-- import bootstrap bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    
-    <script src="https://js.arcgis.com/4.24/"></script>   
-  </head>
+        <!--Google font stylesheet; Adding "preconnect loads the Google font files faster"-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" ; rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto Sans&display=swap" ; rel="stylesheet" />
 
-  <body>
-  <!-- Create navbar and create hamburger menu on mobile -->
-  <nav class="navbar navbar-expand-md navbar-light bg-light py-0">
-    <div class="d-flex flex-grow-1">
-        <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
-        <!-- Logo and text display on large+ screens only -->
-        <a class="navbar-brand d-none d-lg-block" href="https://mapgeoasu.github.io/dutton3d/">
-            <img id="logo" img src="img/asu_azhumanities_logo.png" height="35" class="d-inline-block align-center" alt="ASU AZ Humanties logo" >
-            <span>Dutton's Atlas 3D</span>
-            <!-- Can use code below for 2 line title -->
-            <!-- <span>Dutton's Atlas Project<b>3D Visualization</b></span> -->
-        </a>
-        <!-- Logo and text display on medium screens only -->
-        <a class="navbar-brand d-none d-md-block d-lg-none" href="https://mapgeoasu.github.io/dutton3d/">
-            <img id="logo" img src="img/asu_azhumanities_logo.png" height="35" class="d-inline-block align-center" alt="ASU AZ Humanties logo">
-            <span>Dutton's Atlas 3D</span>
-        </a>
-        <!-- Logo and text display on small and under screens only -->
-        <a class="navbar-brand d-none d-sm-block d-md-none" href="https://mapgeoasu.github.io/dutton3d/">
-            Dutton's Atlas 3D
-        </a>
-        <div class="w-100 text-end">
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
-    <div class="collapse navbar-collapse flex-grow-1 text-end" id="navbarNav">
-        <ul class="navbar-nav ms-auto flex-nowrap">
-            <li class="nav-item active"><a href=" https://geospatial.asu.edu" class="nav-link" target="_blank" rel="noopener">Map and Geospatial Hub</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://duttons-atlas-asu.hub.arcgis.com/" target="_blank" rel="noopener">Dutton's Atlas Project</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://geodata-asu.hub.arcgis.com/" target="_blank" rel="noopener">ASU GeoData</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://lib.asu.edu/geo/services" target="_blank" rel="noopener">Submit a Service Request</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <!-- import jquery -->
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.slim.js"
+            integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk="
+            crossorigin="anonymous"></script>
+        <!-- import bootstrap bundle -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
 
-    <!--Main Scene Container-->
-    <div id="viewDiv"></div>
+        <script src="https://js.arcgis.com/4.24/"></script>
+    </head>
 
-    <!--Begin Container for pano-->
-    <!-- the viewer container must have a defined size -->
-    <div class="modal" id="viewerModal" tabindex="-1" role="dialog" aria-labelledby="viewerModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 class="modal-title">Tour the Dutton's Atlas Exhibit</h6> 
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>         
+    <body>
+        <!-- Create navbar and create hamburger menu on mobile -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light py-0">
+            <div class="d-flex flex-grow-1">
+                <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+                <!-- Logo and text display on large+ screens only -->
+                <a class="navbar-brand d-none d-lg-block" href="https://mapgeoasu.github.io/dutton3d/">
+                    <img
+                        id="logo"
+                        img
+                        src="img/asu_azhumanities_logo.png"
+                        height="35"
+                        class="d-inline-block align-center"
+                        alt="ASU AZ Humanties logo" />
+                    <span>Dutton's Atlas 3D Exhibit</span>
+                    <!-- Can use code below for 2 line title -->
+                    <!-- <span>Dutton's Atlas Project<b>3D Visualization</b></span> -->
+                </a>
+                <!-- Logo and text display on medium screens only -->
+                <a class="navbar-brand d-none d-md-block d-lg-none" href="https://mapgeoasu.github.io/dutton3d/">
+                    <img
+                        id="logo"
+                        img
+                        src="img/asu_azhumanities_logo.png"
+                        height="35"
+                        class="d-inline-block align-center"
+                        alt="ASU AZ Humanties logo" />
+                    <span>Dutton's Atlas 3D Exhibit</span>
+                </a>
+                <!-- Logo and text display on small and under screens only -->
+                <a class="navbar-brand d-none d-sm-block d-md-none" href="https://mapgeoasu.github.io/dutton3d/">
+                    Dutton's Atlas 3D Exhibit
+                </a>
+                <div class="w-100 text-end">
+                    <button
+                        class="navbar-toggler custom-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="true"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
             </div>
-            <div class="modal-body" id="viewerModal">
-              <iframe class ="myFrame" id="pano" width="760" height="400" allowfullscreen style="border-style:none;" src=""></iframe>
-            </div>           
-          </div>
-        </div>
-    </div>
-    
-    <!-- Begin Modal for the information box -->
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" style="font-weight: normal !important;">About the 3D Exhibit</h5>
-              <button type="button" id= "closeModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="collapse navbar-collapse flex-grow-1 text-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto flex-nowrap">
+                    <li class="nav-item active">
+                        <a href=" https://geospatial.asu.edu" class="nav-link" target="_blank" rel="noopener"
+                            >Map and Geospatial Hub</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="https://duttons-atlas-asu.hub.arcgis.com/"
+                            target="_blank"
+                            rel="noopener"
+                            >Dutton's Atlas Project</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://geodata-asu.hub.arcgis.com/" target="_blank" rel="noopener"
+                            >ASU GeoData</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://lib.asu.edu/geo/services" target="_blank" rel="noopener"
+                            >Submit a Service Request</a
+                        >
+                    </li>
+                </ul>
             </div>
-            <div class="modal-body">
-              <p>Welcome to the Dutton's Atlas 3D Exhibit! This digital exhibit, and its real-world counterpart, is part of a larger project called <a href="https://duttons-atlas-asu.hub.arcgis.com/" class="infolink" target="_blank">Dutton's Atlas: How Cartography Helped the Canyon Become Grand</a>.</p> 
-              <p>This interactive map scene is a digital replica of a real-world exhibit located in Arizona State Universitys Hayden Library, in Tempe, Arizona, USA.</p><img src="img/info1_new.jpg" class="img-fluid" alt="Dutton's Altas 3D" class="responsive"><br/><br/>
-              <p>The physical exhibit is temporary and runs between October 2022 and December 2022.</p>
-              <p>We created this web-based model to make the exhibit accessible from anywhere in the world and to allow it to exist in perpetuity virtually.</p>
-              <h5>Navigate the Scene</h5>
-              <p>Use the navigation controls to move through and reposition the 3D map scene (highlighted in red)</p> 
-                  <ul class=""infoList>
-                      <li>Zoom-in</li>
-                      <li>Zoom-out</li>
-                      <li>Pan</li>
-                      <li>Rotate</li>
-                      <li>Orient north</li>
-                  </ul>
-              <p>Use the “home” button to return to the default scene view (highlighted in blue).</p>
-              <!-- <p>Use the “play” button (highlighted in green) to auto-rotate the scene; “pause” stops the rotation.</p>   -->
-              <img src="img/info2_new.jpg" class="img-fluid" alt="Dutton's Altas 3D" class="responsive"><br/><br/>
-              <h5>Explore the Exhibit</h5>
-              <p>Exploring the exhibit is easy. Select any piece of art to learn more about it.</p>
-              <img src="img/info3_new.jpg" class="img-fluid" alt="Dutton's Altas 3D" class="responsive"><br/><br/>
-              <p>The pop-up box for maps and landscape illustrations will also contain links to explore those items in interactive web maps.</p>
-              <h5>View the Exhibit Space</h5>
-              <p>Select the button with the image icon to view a 360 degree panorama photo of the space.</p>
-              <img src="img/info4.jpg " class="img-fluid" alt="Dutton's Altas 3D" class="responsive"><br/><br/>
-              <p>Virtually tour within the panorama viewer (highlighted in red) and discover “hotspots” that reveal interesting facts about the space.
-              </p>
-              <h5>Access this Information Again</h5>
-              <p>Select the “i” (information) button to reactivate this information box.</p>
-              <h5>Learn More</h5>
-              <p>Contact the Map and Geospatial Hub at ASU Library with any questions or comments about this project: <a href="https://geospatial.asu.edu" class="infolink" target="_blank" rel="noopener noreferrer">geospatial.asu.edu</a>.</p>
-              <p>Visit the Map and Geospatial Hub's <a href="#" class="infolink" target="_blank" rel="noopener noreferrer">GitHub Page</a> to learn more about this project, including its source code and production credits.</p>
+        </nav>
+
+        <!--Main Scene Container-->
+        <div id="viewDiv"></div>
+
+        <!--Begin Container for pano-->
+        <!-- the viewer container must have a defined size -->
+        <div
+            class="modal"
+            id="viewerModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="viewerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">Tour the Dutton's Atlas Exhibit</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="pano">
+                        <div id="panorama"></div>
+                    </div>
+                </div>
             </div>
-          </div>   
         </div>
-      </div>
-    
-    <script src="main.js"></script>
-  </body>
+
+        <!-- Begin Modal for the information box -->
+        <div
+            class="modal fade"
+            id="infoModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="infoModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-weight: normal !important">About the 3D Exhibit</h5>
+                        <button
+                            type="button"
+                            id="closeModal"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Welcome to the Dutton's Atlas 3D Exhibit! This digital exhibit, and its real-world
+                            counterpart, is part of a larger project called
+                            <a href="https://duttons-atlas-asu.hub.arcgis.com/" class="infolink" target="_blank"
+                                >Dutton's Atlas: How Cartography Helped the Canyon Become Grand</a
+                            >.
+                        </p>
+                        <p>
+                            This interactive map scene is a digital replica of a real-world exhibit located in Arizona
+                            State Universitys Hayden Library, in Tempe, Arizona, USA.
+                        </p>
+                        <img
+                            src="img/info1_new.jpg"
+                            class="img-fluid"
+                            alt="Dutton's Altas 3D"
+                            class="responsive" /><br /><br />
+                        <p>The physical exhibit is temporary and runs between October 2022 and December 2022.</p>
+                        <p>
+                            We created this web-based model to make the exhibit accessible from anywhere in the world
+                            and to allow it to exist in perpetuity virtually.
+                        </p>
+                        <h5>Navigate the Scene</h5>
+                        <p>
+                            Use the navigation controls to move through and reposition the 3D map scene (highlighted in
+                            red)
+                        </p>
+                        <ul class="" infoList>
+                            <li>Zoom-in</li>
+                            <li>Zoom-out</li>
+                            <li>Pan</li>
+                            <li>Rotate</li>
+                            <li>Orient north</li>
+                        </ul>
+                        <p>Use the “home” button to return to the default scene view (highlighted in blue).</p>
+                        <!-- <p>Use the “play” button (highlighted in green) to auto-rotate the scene; “pause” stops the rotation.</p>   -->
+                        <img
+                            src="img/info2_new.jpg"
+                            class="img-fluid"
+                            alt="Dutton's Altas 3D"
+                            class="responsive" /><br /><br />
+                        <h5>Explore the Exhibit</h5>
+                        <p>Exploring the exhibit is easy. Select any piece of art to learn more about it.</p>
+                        <img
+                            src="img/info3_new.jpg"
+                            class="img-fluid"
+                            alt="Dutton's Altas 3D"
+                            class="responsive" /><br /><br />
+                        <p>
+                            The pop-up box for maps and landscape illustrations will also contain links to explore those
+                            items in interactive web maps.
+                        </p>
+                        <h5>View the Exhibit Space</h5>
+                        <p>Select the button with the image icon to view a 360 degree panorama photo of the space.</p>
+                        <img
+                            src="img/info4.jpg "
+                            class="img-fluid"
+                            alt="Dutton's Altas 3D"
+                            class="responsive" /><br /><br />
+                        <p>
+                            Virtually tour within the panorama viewer (highlighted in red) and discover “hotspots” that
+                            reveal interesting facts about the space.
+                        </p>
+                        <h5>Access this Information Again</h5>
+                        <p>Select the “i” (information) button to reactivate this information box.</p>
+                        <h5>Learn More</h5>
+                        <p>
+                            Contact the Map and Geospatial Hub at ASU Library with any questions or comments about this
+                            project:
+                            <a
+                                href="https://geospatial.asu.edu"
+                                class="infolink"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >geospatial.asu.edu</a
+                            >.
+                        </p>
+                        <p>
+                            Visit the Map and Geospatial Hub's
+                            <a href="#" class="infolink" target="_blank" rel="noopener noreferrer">GitHub Page</a> to
+                            learn more about this project, including its source code and production credits.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
 </html>
